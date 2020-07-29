@@ -1,9 +1,10 @@
 import axios from "axios";
+import {api_key} from '../config'
 const TEAM_FIXTURE_REQUEST = 'TEAM_FIXTURE_REQUEST';
 const TEAM_FIXTURE_SUCCESS = 'TEAM_FIXTURE_SUCCESS';
 const TEAM_FIXTURE_FAIL = 'TEAM_FIXTURE_FAIL';
 
-import {api_key} from '../config'
+
 
 
 const fixtureDetailAction = (index) => async(dispatch) =>{
