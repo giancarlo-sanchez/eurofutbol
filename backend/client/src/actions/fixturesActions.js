@@ -5,8 +5,6 @@ const TEAM_FIXTURE_SUCCESS = 'TEAM_FIXTURE_SUCCESS';
 const TEAM_FIXTURE_FAIL = 'TEAM_FIXTURE_FAIL';
 
 
-
-
 const fixtureDetailAction = (index) => async(dispatch) =>{
     try{
         dispatch({type: TEAM_FIXTURE_REQUEST });
