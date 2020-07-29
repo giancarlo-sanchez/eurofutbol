@@ -20,30 +20,30 @@ function TeamPage (props){
 
     console.log("This is teamDetails",teamDetails,"This is userInfo:",userInfo)
 
-    let userId;
-    let teamId;
-    let teamImageUrl;
-    let teamName;
+    // let userId;
+    // let teamId;
+    // let teamImageUrl;
+    // let teamName;
 
-    if(teamDetails){
-        userId=userInfo.user.id;
-        teamId=teamDetails.id;
-        teamImageUrl=teamDetails.logo_path;
-        teamName=teamDetails.name;
-    }
+    // if(teamDetails){
+    //     userId=userInfo.user.id;
+    //     teamId=teamDetails.id;
+    //     teamImageUrl=teamDetails.logo_path;
+    //     teamName=teamDetails.name;
+    // }
 
-    console.log("This is the object that is passed to favorite teams",userId, teamId, teamImageUrl, teamName)
-    const followTeam = () => {
-        // create a follow team object
-        dispatch(addFavoriteTeam({userId, teamId, teamImageUrl, teamName}));
-      }
+    // console.log("This is the object that is passed to favorite teams",userId, teamId, teamImageUrl, teamName)
+    // const followTeam = () => {
+    //     // create a follow team object
+    //     dispatch(addFavoriteTeam({userId, teamId, teamImageUrl, teamName}));
+    //   }
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:
 <div className="container-team-page">
     <div className="team-logo-square">
         <div className="text-box__squad-team-page">
             <img src={teamDetails.logo_path}></img>
-            <button onClick={followTeam}>Follow</button>
+            <button>Follow</button>
         </div>
         <div className="team-logo-square__text-box">
             <text>Team:</text>
