@@ -797,18 +797,35 @@ input{
 /*Creating media queries*/
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) and (min-width: 400px){
+@media screen and (max-width: 64rem) and (orientation: landscape){
+    .picture-home-page img{
+
+
+        width: 64rem;
+        height: 36rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-self: center;
+
+    }
+
+}
+
+@media screen and (max-width: 36rem){
+    .header{
+        width: 36rem;
+    }
     .container-home-page{
         display: block;
     }
     .picture-home-page img{
-
-        width: 45rem;
-        width: 45rem;
-        width: 46rem;
-        height: 30rem;
+        width: 32rem;
+        /* height: rem; */
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        align-self: center;
 
     }
 
