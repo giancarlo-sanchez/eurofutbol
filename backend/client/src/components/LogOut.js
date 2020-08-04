@@ -28,7 +28,7 @@ const logOutHandler = () => {
     }, [])
 
 return<div className="logout-button-holder">
-      <div onClick={logOutHandler}>Logout</div>
+      <div onClick={logOutHandler}>LOGOUT</div>
     </div>
 
 }

@@ -36,11 +36,11 @@ function HomePage(props){
     <div className="picture-home-page-grid-container">
         <div className="picture-home-page">
             <Carousel>
-                <img src="https://i.postimg.cc/rmv2NNDr/first.jpg" />
-                <img src="https://i.postimg.cc/0NjggBmS/second.jpg" />
-                <img src="https://i.postimg.cc/zXr9DBK8/third.jpg" />
-                <img src="https://i.postimg.cc/rFN7DkNW/fourth.jpg" />
-                <img src="https://i.postimg.cc/bNm3XNR6/fifth.jpg" />
+                <img src="https://i.postimg.cc/kgfv2xXN/first.png" />
+                <img src="https://i.postimg.cc/HLN02dMV/second.png" />
+                <img src="https://i.postimg.cc/7Lj7zXvz/third.png" />
+                <img src="https://i.postimg.cc/VvQVKjtr/fourth.png" />
+                <img src="https://i.postimg.cc/4NMhqBdS/fifth.png" />
             </Carousel>
 
         </div>
