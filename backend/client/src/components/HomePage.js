@@ -32,6 +32,33 @@ function HomePage(props){
 
         </div>
     </div>
+    <div className="title__apptour">SCREENSHOTS TOUR</div>
+    <div className="picture-home-page-grid-container">
+        <div className="picture-home-page">
+            <Carousel>
+                <img src="https://i.postimg.cc/rmv2NNDr/first.jpg" />
+                <img src="https://i.postimg.cc/0NjggBmS/second.jpg" />
+                <img src="https://i.postimg.cc/zXr9DBK8/third.jpg" />
+                <img src="https://i.postimg.cc/rFN7DkNW/fourth.jpg" />
+                <img src="https://i.postimg.cc/bNm3XNR6/fifth.jpg" />
+            </Carousel>
+
+        </div>
+    </div>
+    <div>
+        <a href="https://github.com/giancarlo-sanchez/eurofutbol/tree/master/backend">
+            <div className="links-homePage">
+                    <div>Github Repo</div>
+                    <img src='https://image.flaticon.com/icons/png/512/25/25231.png'/>
+            </div>
+        </a>
+        <a href="https://www.linkedin.com/in/giancarlo-sanchez-6b28301aa/">
+            <div className="links-homePage-2">
+                <div>My</div>
+                <img src='https://logos-world.net/wp-content/uploads/2020/04/Linkedin-Logo-2003%E2%80%932011.png'/>
+            </div>
+        </a>
+    </div>
 
 
 </div>
