@@ -812,23 +812,30 @@ input{
 
 }
 
-@media screen and (max-width: 36rem){
-    .header{
-        width: 36rem;
-    }
+@media screen and (min-width: 36rem){
+
+    /* .main{
+        height: ;
+    } */
     .container-home-page{
         display: block;
+        text-align: center;
+        font-size: 3rem;
+        height: 70rem;
     }
-    .picture-home-page img{
-        width: 32rem;
-        /* height: rem; */
+
+    .container-home-page>div{
         display: flex;
         justify-content: space-around;
-        align-items: center;
-        align-self: center;
 
     }
 
+    .picture-home-page img{
+        width: auto;
+        height: 36rem;
+        display: flex;
+
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
