@@ -6,6 +6,7 @@ import ListPlayers from '../components/ListPlayer'
 import TeamStats from '../components/TeamStats'
 import TeamFixtures from '../components/TeamFixtures'
 import {addFavoriteTeam} from '../actions/favoriteTeamActions'
+import PlayerPage from './PlayerPage';
 
 function TeamPage (props){
     let index =  props.match.params.id
@@ -20,25 +21,10 @@ function TeamPage (props){
 
     console.log("This is teamDetails",teamDetails,"This is userInfo:",userInfo)
 
-    // let userId;
-    // let teamId;
-    // let teamImageUrl;
-    // let teamName;
-
-    // if(teamDetails){
-    //     userId=userInfo.user.id;
-    //     teamId=teamDetails.id;
-    //     teamImageUrl=teamDetails.logo_path;
-    //     teamName=teamDetails.name;
-    // }
-
-    // console.log("This is the object that is passed to favorite teams",userId, teamId, teamImageUrl, teamName)
-    // const followTeam = () => {
-    //     // create a follow team object
-    //     dispatch(addFavoriteTeam({userId, teamId, teamImageUrl, teamName}));
-    //   }
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:
+<div>
+<div className='players-section__title'>TEAM</div>
 <div className="container-team-page">
     <div className="team-logo-square">
         <div className="text-box__squad-team-page">
@@ -72,13 +58,18 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
         </div>
         {/* <div>TEAM STATS</div> */}
     </div>
-
+</div>
+<div className="players-section">
+    <div className="players-section__title">PLAYERS</div>
     <div className="container-carousel">
+    {/* <div>Players</div> */}
         <ListPlayers teamId={teamDetails.id} seasonId={teamDetails.current_season_id} team={teamDetails.name} />
     </div>
-
+</div>
 
 </div>
+
+
 }
 
 export default TeamPage;

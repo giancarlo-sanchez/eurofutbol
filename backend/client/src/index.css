@@ -70,11 +70,11 @@ body{
 
 .container-team-page{
     display:grid;
-    grid-gap:1.2rem;
+    grid-gap:8rem;
     /* grid-template-columns: 0.33333fr 0.33333fr 0.33333fr; */
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr auto;
     height: 100%;
-    padding: 1.2rem;
+    padding: 5rem;
     background-image: url(https://i.postimg.cc/cJGt5dym/soccer-ball.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -106,6 +106,7 @@ body{
 }
 
 .team-logo-square__text-box text{
+    display: flex;
     color:black;
 }
 
@@ -122,9 +123,11 @@ body{
 
 .container-carousel{
     height: 100%;
-    background-color: grey;
+    width: 100%;
+    /* background-color: grey; */
     display:flex;
-    align-self: center;
+    justify-content: space-around;
+    /* padding: 1rem;; */
 
 }
 
@@ -223,21 +226,14 @@ body{
 /* Styling ListPlayer component */
 .list-players{
     margin:0;
-    height: 100%;
-    background-color: grey;
-    /* width: 25rem; */
+    height: 68rem;
+    width: 100%;
     display:flex;
     flex-direction: column;
-
-    /* padding: 2rem; */
     justify-content: space-around;
-    /* text-align: center; */
-
 }
 
-.list-players  div{
-    /* padding: 2rem; */
-}
+
 .list-players a{
     text-decoration: none;
     color: white;
@@ -744,14 +740,34 @@ input{
 
 .container-player-page{
     display:grid;
-    grid-gap:1.2rem;
+    grid-gap:8rem;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 100%;
-    padding: 1.2rem;
-    background-image: url(https://i.postimg.cc/cJGt5dym/soccer-ball.jpg);
+    height: 55rem;
+    padding: 5rem;
+    /* background-image: url(https://i.postimg.cc/02LZNYkJ/uefa-1-2017.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    align-items: center; */
+}
+
+.players-section{
+    background-image: url(https://i.postimg.cc/02LZNYkJ/uefa-1-2017.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    align-items: center;
+}
+
+.players-section__title{
+    display: flex;
+    justify-content: space-around;
+    background-color: orange;
+    border: 0.2rem solid white;
+    border-radius: 3rem;
+    padding: 1rem;
+    /* border-radius: 2rem; */
+    /* width: 40rem; */
 }
 
 

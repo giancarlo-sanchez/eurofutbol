@@ -5,8 +5,8 @@ import {listDetailsPlayerAction}  from '../actions/playerActions'
 import playerStatsTotal from '../utilFunctions/playerStats'
 
 function PlayerPage (props){
-    let index =  props.match.params.id
-    console.log("this is index",index)
+    let index =  props.playerInfo;
+    // console.log("this is index",props)
     const dispatch = useDispatch();
 
 
