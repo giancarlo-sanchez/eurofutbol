@@ -67,6 +67,12 @@ body{
 
 
 /* Styling team page component */
+.team-page-background{
+    background-image: url(https://i.postimg.cc/cJGt5dym/soccer-ball.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 
 .container-team-page{
     display:grid;
@@ -75,26 +81,20 @@ body{
     grid-template-columns: 1fr auto;
     height: 100%;
     padding: 5rem;
-    background-image: url(https://i.postimg.cc/cJGt5dym/soccer-ball.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+
 
 }
 
 .team-logo-square{
-    /* width: 30rem; */
-    /* height: 100%; */
     padding: 0;
     background-color: grey;
     color: white;
     font-size: 1.8rem;
-    /* border-radius: 25%; */
     display:grid;
     grid-column: auto / span 1;
     flex-direction: column;
-    /* align-self: center; */
     align-items: center;
+    border-radius: 3rem;
 }
 
 .team-logo-square > div{
@@ -138,10 +138,9 @@ body{
   display: grid;
   grid-template-columns: subgrid;
 }
-
-/* .fixtures-grid-container{
-    background-color: grey;
-} */
+.fixtures-grid-container{
+    border-radius: 2rem;
+}
 
 .team-next-fixture{
     background-color: grey;
@@ -151,6 +150,7 @@ body{
     display: grid;
     grid-template-columns: subgrid;
     height: 100%;
+
 }
 
 
@@ -248,11 +248,14 @@ body{
     display: grid;
     grid-template-columns: subgrid;
     height: 100%;
+    border-radius: 2rem;
 
 }
 
 .list-stats__title{
     background-color: black;
+    border-radius: 2rem;
+    padding: 1rem;
     color:white;
     font-size: 6rem;
     /* font-weight: bold; */
@@ -260,9 +263,9 @@ body{
 }
 
 .list-stats > div{
-  padding: 0.4rem;
+  padding: 1.2rem;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   display: flex;
   border-bottom:0.2rem solid darkgray;
   justify-content: space-around;

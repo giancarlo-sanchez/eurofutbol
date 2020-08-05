@@ -23,7 +23,7 @@ function TeamPage (props){
 
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:
-<div>
+<div className="team-page-background">
 <div className='players-section__title'>TEAM</div>
 <div className="container-team-page">
     <div className="team-logo-square">
