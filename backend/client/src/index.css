@@ -76,11 +76,11 @@ body{
 
 .container-team-page{
     display:grid;
-    grid-gap:8rem;
+    grid-gap:7rem;
     /* grid-template-columns: 0.33333fr 0.33333fr 0.33333fr; */
     grid-template-columns: 1fr auto;
     height: 100%;
-    padding: 5rem;
+    padding: 4rem;
 
 
 }
@@ -205,8 +205,8 @@ body{
     background-color: white;
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
-    width: 20rem;
+    padding: 1.2rem;
+    width: 17rem;
 }
 
 .teams-logo__img:hover{
@@ -802,11 +802,13 @@ input{
 .player-logo-square__img{
     display: flex;
     justify-content: space-around;
+    /* width: 2rem; */
 }
 
 .player-logo-square__img img{
     background-color: white;
     border-radius: 1.5rem;
+    width: 13rem;
 }
 
 .container-player-page__info{
