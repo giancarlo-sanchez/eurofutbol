@@ -29,7 +29,7 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
     <div className="team-logo-square">
         <div className="text-box__squad-team-page">
             <img src={teamDetails.logo_path}></img>
-            <button>Follow</button>
+            {/* <button>Follow</button> */}
         </div>
         <div className="team-logo-square__text-box">
             <text>Team:</text>
