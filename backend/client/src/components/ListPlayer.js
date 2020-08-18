@@ -25,6 +25,9 @@ function ListPlayers (teamId){
     const userSignin = useSelector(state =>state.userSignin);
     const { userInfo, token } = userSignin;
 
+    const listFavoritePlayer = useSelector(state => state.listFavoritePlayer);
+    const {favoritePlayersList} = listFavoritePlayer
+
     // const addFavoritePlayer = () => {
     //     dispatch(addPlayer(userInfo.user.id, player.id));
     //   }

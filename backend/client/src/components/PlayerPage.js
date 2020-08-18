@@ -3,6 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {listDetailsPlayerAction}  from '../actions/playerActions'
 import playerStatsTotal from '../utilFunctions/playerStats'
+import { addPlayer } from '../actions/favoritePlayerActions';
 
 function PlayerPage (props){
     let index =  props.playerInfo;
@@ -25,6 +26,13 @@ function PlayerPage (props){
         console.log(filteredStats)
     }
 
+    const userSignin = useSelector(state =>state.userSignin);
+    const { userInfo, token } = userSignin;
+
+    const addFavoritePlayer = () => {
+        dispatch(addPlayer(userInfo.user.id, player.id));
+      }
+
 
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:
@@ -39,6 +47,7 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
                 <div className="player-logo-square__img">
                     <img src={playerInfo.image_path} />
                 </div>
+                <div><button onClick={addFavoritePlayer}>Follow</button></div>
             </div>
         </div>
 

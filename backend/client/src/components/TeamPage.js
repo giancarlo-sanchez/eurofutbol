@@ -18,6 +18,8 @@ function TeamPage (props){
     const {teamDetails, loading,error} = listDetailsTeam
     const userSignin = useSelector(state =>state.userSignin);
     const { userInfo } = userSignin;
+    const listFavoritePlayer = useSelector(state => state.listFavoritePlayer);
+    const {favoritePlayersList} = listFavoritePlayer
 
     console.log("This is teamDetails",teamDetails,"This is userInfo:",userInfo)
 
