@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {signin}  from '../actions/userSessionAction';
 
+
 function LoginPanel (props){
 
     const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ function LoginPanel (props){
 
     const dispatch = useDispatch();
 
-    const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
+    const redirect = props.location.search ? props.location.search.split("=")[1] : '/list-leagues';
 
 
     useEffect(() => {
@@ -30,6 +31,11 @@ function LoginPanel (props){
         e.preventDefault();
         dispatch(signin(email, password));
 
+      }
+
+      const demosign =(e)=>{
+        e.preventDefault();
+        dispatch(signin('user@two.example','abc123'))
       }
 
       return <div className="form">
@@ -58,10 +64,13 @@ function LoginPanel (props){
             <button type="submit" className="button primary">Signin</button>
           </li>
           <li>
+          <button onClick={demosign} className="button primary">DEMO USER</button>
+          </li>
+          <li>
             New to EuroFutbol?
           </li>
           <li>
-            <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create your EuroFutbol Account</Link>
+            <Link to={redirect === "/list-leagues" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create your EuroFutbol Account</Link>
           </li>
         </ul>
       </form>

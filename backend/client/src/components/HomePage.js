@@ -16,7 +16,7 @@ function HomePage(props){
         <div className="text-home-page">
             <div><text>The most Important competitions in one app</text></div>
 
-            <Link exact to="/list-leagues">
+            <Link exact to="/login">
             <div className="home-page-button">Explore</div></Link>
         </div>
     </div>
