@@ -29,9 +29,9 @@ function PlayerPage (props){
     const userSignin = useSelector(state =>state.userSignin);
     const { userInfo, token } = userSignin;
 
-    const addFavoritePlayer = () => {
-        dispatch(addPlayer(userInfo.user.id, player.id));
-      }
+    // const addFavoritePlayer = () => {
+    //     dispatch(addPlayer(userInfo.user.id, player.id));
+    //   }
 
 
 
@@ -47,7 +47,7 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
                 <div className="player-logo-square__img">
                     <img src={playerInfo.image_path} />
                 </div>
-                <div><button onClick={addFavoritePlayer}>Follow</button></div>
+                {/* <div><button onClick={addFavoritePlayer}>Follow</button></div> */}
             </div>
         </div>
 
