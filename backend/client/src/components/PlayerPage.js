@@ -22,7 +22,7 @@ function PlayerPage (props){
     // const {coach,squad} = teamDetails
     // console.log("this is coach and squad",coach, squad)
     if(playerInfo){
-        let filteredStats = playerStatsTotal(playerInfo.stats.data)
+        let filteredStats = playerStatsTotal(playerInfo.stats?playerInfo.stats.data:[])
         console.log(filteredStats)
     }
 
@@ -41,7 +41,7 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
             <div className="container-player-page__info">PLAYER INFO</div>
             <div className="player-logo-square">
                 <div>Name: {playerInfo.fullname}</div>
-                <div>Position: {playerInfo.position.data.name}</div>
+                <div>Position: {playerInfo.position?playerInfo.position.data.name:"no data"}</div>
                 <div>Team: {playerInfo.team.data.name}</div>
                 <div>Birthday: {playerInfo.birthdate}</div>
                 <div className="player-logo-square__img">
@@ -76,6 +76,14 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
             <div>Total Saves: {playerStatsTotal(playerInfo.stats.data).saves}</div>
             <div>Total yellow cards: {playerStatsTotal(playerInfo.stats.data).yellowcards}</div>
             <div>Total red cards: {playerStatsTotal(playerInfo.stats.data).redcards}</div>
+             {/* <div className="container-player-page__info">STATS</div>
+            <div className="player-logo-square">
+            <div>Total matches:</div>
+            <div>Total goals:</div>
+            <div>Total assists:</div>
+            <div>Total Saves:</div>
+            <div>Total yellow cards: </div>
+            <div>Total red cards:</div> */}
             {/* <div className="">
                 <img src={playerInfo.image_path} />
             </div> */}

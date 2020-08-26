@@ -5,7 +5,7 @@ import Carousel from 'react-material-ui-carousel'
 
 function TeamStats (stats){
     console.log("This are the stats:",stats)
-    let filteredStats = statsTotal(stats.stats.data)
+    let filteredStats = statsTotal(stats.stats?stats.stats.data:[])
     console.log("this is filtered stats",filteredStats)
 
 
