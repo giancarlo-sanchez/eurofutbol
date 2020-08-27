@@ -27,12 +27,12 @@ const listFavoriteTeamAction = (token,userId) => async(dispatch) =>{
 
 }
 
-const addFavoriteTeam = (teamData)=> async(dispatch,getState) =>{
+const addFavoriteTeam = (userId,teamId, teamImageUrl, teamName)=> async(dispatch,getState) =>{
     try{
         dispatch({type: FAVORITE_TEAMS_CREATE_REQUEST });
         // const { userSignin: { userInfo:{token} } } = getState();
         // console.log("This is the token on endpoint:",token)
-        const {data} = await axios.post(`${baseUrl}/favorite-teams/`,teamData)
+        const {data} = await axios.post(`${baseUrl}/favorite-teams/`,userId,teamId, teamImageUrl, teamName)
         let newTeam = data
 
         dispatch({type: FAVORITE_TEAMS_CREATE_SUCCESS, payload: newTeam})

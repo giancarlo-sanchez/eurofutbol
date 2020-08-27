@@ -20,9 +20,19 @@ function TeamPage (props){
     const { userInfo } = userSignin;
     const listFavoritePlayer = useSelector(state => state.listFavoritePlayer);
     const {favoritePlayersList} = listFavoritePlayer
+    let userId = userInfo ? userInfo.user.id : null
+    let teamId = teamDetails ? teamDetails.id : null
+    let teamImageUrl = teamDetails ? teamDetails.logo_path : null
+    let teamName = teamDetails ? teamDetails.name : null
+
+    console.log("This is the data on the variables",userId,teamId, teamImageUrl, teamName,"And thats it")
 
     console.log("This is teamDetails",teamDetails,"This is userInfo:",userInfo)
 
+    const addFavTeam=(e)=>{
+        e.preventDefault();
+        dispatch(addFavoriteTeam({userId,teamId, teamImageUrl, teamName}))
+    }
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:
 <div className="team-page-background">
@@ -31,7 +41,7 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
     <div className="team-logo-square">
         <div className="text-box__squad-team-page">
             <img src={teamDetails.logo_path}></img>
-            <button>Follow</button>
+            <button onClick={addFavTeam}>Follow</button>
         </div>
         <div className="team-logo-square__text-box">
             <text>Team:</text>
