@@ -25,9 +25,6 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:<ul className="l
         </div>
     </li>
 
-{/* {league.current_season_id?}
-use filter function  */}
-
   </Link>
     ))}
     </ul>

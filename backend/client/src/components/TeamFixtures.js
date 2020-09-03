@@ -8,9 +8,8 @@ import dateFormater  from '../utilFunctions/dateFormater'
 
 function TeamFixtures (props){
 
-    console.log("this is TeamFixtures props",props)
     let index = props.fixtureId[0]?props.fixtureId[0].id:11867594;
-    console.log("this is the fixture Id",index)
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,9 +17,8 @@ function TeamFixtures (props){
     }, [])
 
     const  fixtures= useSelector(state => state.fixtures);
-    console.log("this is fixtures variable",fixtures)
     const {fixtureDetails, loading,error} = fixtures
-    console.log("this is fixtureDetails",fixtureDetails,loading)
+
     let dateTimeZone;
     if(fixtureDetails){
         dateTimeZone = dateFormater(fixtureDetails.time.starting_at.date, fixtureDetails.time.starting_at.time, fixtureDetails.time.starting_at.timezone)

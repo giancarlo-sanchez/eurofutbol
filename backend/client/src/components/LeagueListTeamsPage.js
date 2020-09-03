@@ -7,8 +7,6 @@ import setLeagueName from '../utilFunctions/leagueNames'
 function LeagueListTeamsPage (props){
     let index =  props.match.params.id
     let {name,place} = setLeagueName(index)
-    console.log("this is name",name,"this is place:",place)
-    console.log("this is index",index)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,11 +14,8 @@ function LeagueListTeamsPage (props){
     }, [])
 
     const listTeamsLeague = useSelector(state => state.listTeamsLeague);
-    console.log("this is teamData",listTeamsLeague)
+
     const {leagueTeamsList, loading,error} = listTeamsLeague
-    console.log("this is leagueTeamsList",leagueTeamsList,loading)
-    // const {coach,squad} = teamDetails
-    // console.log("this is coach and squad",coach, squad)
 
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:

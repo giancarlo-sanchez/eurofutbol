@@ -1,6 +1,5 @@
-import React,{useEffect,useSelector} from 'react';
-import { connect,useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React,{useEffect} from 'react';
+import { useDispatch } from 'react-redux';
 import { logout } from '../actions/userSessionAction';
 import { useHistory } from "react-router"
 
@@ -9,7 +8,7 @@ console.log("this is the logout props",props)
 const {token} = props;
 let history = useHistory()
 const dispatch = useDispatch();
-// const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
+
 
 
 const logOutHandler = () => {

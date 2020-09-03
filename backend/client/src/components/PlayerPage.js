@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {listDetailsPlayerAction}  from '../actions/playerActions'
@@ -7,7 +7,6 @@ import { addPlayer } from '../actions/favoritePlayerActions';
 
 function PlayerPage (props){
     let index =  props.playerInfo;
-    // console.log("this is index",props)
     const dispatch = useDispatch();
 
 
@@ -19,8 +18,6 @@ function PlayerPage (props){
     console.log("this is teamData",listDetailsPlayer)
     const {playerInfo, loading,error} = listDetailsPlayer
     console.log("this is player",playerInfo,loading)
-    // const {coach,squad} = teamDetails
-    // console.log("this is coach and squad",coach, squad)
     if(playerInfo){
         let filteredStats = playerStatsTotal(playerInfo.stats?playerInfo.stats.data:[])
         console.log(filteredStats)
@@ -47,7 +44,6 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
                 <div className="player-logo-square__img">
                     <img src={playerInfo.image_path} />
                 </div>
-                {/* <div><button onClick={addFavoritePlayer}>Follow</button></div> */}
             </div>
         </div>
 
@@ -76,17 +72,7 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
             <div>Total Saves: {playerStatsTotal(playerInfo.stats.data).saves}</div>
             <div>Total yellow cards: {playerStatsTotal(playerInfo.stats.data).yellowcards}</div>
             <div>Total red cards: {playerStatsTotal(playerInfo.stats.data).redcards}</div>
-             {/* <div className="container-player-page__info">STATS</div>
-            <div className="player-logo-square">
-            <div>Total matches:</div>
-            <div>Total goals:</div>
-            <div>Total assists:</div>
-            <div>Total Saves:</div>
-            <div>Total yellow cards: </div>
-            <div>Total red cards:</div> */}
-            {/* <div className="">
-                <img src={playerInfo.image_path} />
-            </div> */}
+
         </div>
         </div>
 

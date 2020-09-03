@@ -18,10 +18,6 @@ function FavoritePlayerPage (props){
     if(!token){
         history.push('/login')
       }
-
-
-    console.log("this is the token",token)
-    // console.log("this is the index",index)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -33,8 +29,6 @@ function FavoritePlayerPage (props){
 
     const listFavoritePlayer = useSelector(state => state.listFavoritePlayer);
     const {favoritePlayersList, loading,error} = listFavoritePlayer
-    // const {favoritePlayers} = favoritePlayersList
-    // console.log("This is favoritePlayer",favoritePlayers)
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:
 <div className="grid-user-details">
@@ -84,20 +78,6 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
     </div>
 </div>
 
-{/* <ul className="list-league-all">
-{favoritePlayersList.map(player =>(
-
-    <li key={player.id}>
-        <div className="list-leagues">
-            <img src={player.logo_path} alt="team"/>
-                <div>
-                    {player.name}
-                </div>
-        </div>
-    </li>
-
-    ))}
-    </ul> */}
 }
 
 export default FavoritePlayerPage;

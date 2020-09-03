@@ -6,11 +6,9 @@ import { useHistory } from "react-router"
 import Carousel from 'react-material-ui-carousel';
 
 function FavoriteTeamPage (props){
-    console.log("This is the props from fav player page",props)
     let token = props.token;
     let index = parseInt(props.teams)
-    console.log("this is the token fav team",token)
-    console.log("this is the index fav team",index)
+
     const dispatch = useDispatch();
 
     useEffect(() => {

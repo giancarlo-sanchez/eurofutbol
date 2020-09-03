@@ -7,7 +7,7 @@ import { addPlayer } from '../actions/favoritePlayerActions';
 import PlayerPage from './PlayerPage';
 
 function ListPlayers (teamId){
-    console.log("This are the props:",teamId.teamId,teamId.seasonId,teamId.team)
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,11 +16,10 @@ function ListPlayers (teamId){
 
 
     const listPlayersInTeam = useSelector(state => state.listPlayers);
-    console.log("this is The store slice:",listPlayersInTeam)
+
 
     const {listPlayers, loading,error} = listPlayersInTeam
 
-    console.log("this is squad",listPlayers)
 
     const userSignin = useSelector(state =>state.userSignin);
     const { userInfo, token } = userSignin;

@@ -14,13 +14,8 @@ function Livescore (){
     }, [])
 
     const  livescore= useSelector(state => state.livescore);
-    console.log("this is livescore variable",livescore)
     const {livescoreDetails, loading,error} = livescore
-    console.log("this is livescoreDetails",livescoreDetails,loading)
-    // let dateTimeZone;
-    // if(livescoreDetails){
-    //     dateTimeZone = dateFormater(livescoreDetails.time.starting_at.date, livescoreDetails.time.starting_at.time, livescoreDetails.time.starting_at.timezone)
-    // }
+
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:
 <Carousel className="livescore-details">{livescoreDetails.map(livescore =>(
