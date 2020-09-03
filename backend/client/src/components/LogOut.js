@@ -12,11 +12,8 @@ const dispatch = useDispatch();
 
 
 const logOutHandler = () => {
-    // create an order
     dispatch(logout(token));
     history.push("/")
-    // return <Redirect to='/'/>
-    // dispatch();
   }
 
     useEffect(() => {

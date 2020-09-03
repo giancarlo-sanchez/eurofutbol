@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
-import {Link} from 'react-router-dom'
 import {listPlayersAction}  from '../actions/listPlayerActions'
 import Carousel from 'react-material-ui-carousel'
 import { addPlayer } from '../actions/favoritePlayerActions';
