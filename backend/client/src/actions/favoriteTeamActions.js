@@ -49,9 +49,10 @@ const addFavoriteTeam = (userId,teamId, teamImageUrl, teamName)=> async(dispatch
 const removeFavoriteTeam = (teamId,userId)=> async(dispatch,getState) =>{
     try{
         dispatch({type: FAVORITE_TEAMS_DELETE_REQUEST });
-        // const { userSignin: { userInfo:{token} } } = getState();
+        const { userSignin: { userInfo:{token} } } = getState();
         // console.log("This is the token on endpoint:",token)
-        const {data} = await axios.delete(`${baseUrl}/unfollow-favorite-team/`,teamId,userId)
+        const {data} = await axios.delete(`${baseUrl}/unfollow-favorite-team/`,{
+            headers: { Authorization: `Bearer ${token}` },teamId,userId})
         let deleteTeam = data
 
         dispatch({type: FAVORITE_TEAMS_DELETE_SUCCESS, payload: deleteTeam})

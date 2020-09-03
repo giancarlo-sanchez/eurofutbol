@@ -37,8 +37,9 @@ router.post("/", asyncHandler(async (req, res)=>{
     res.status(201).end();
 }));
 
-router.delete("/unfollow-favorite-team/:id", authenticated,
+router.delete("/unfollow-favorite-team/",
     asyncHandler(async function(req, res){
+        console.log("this is req.body",req.body)
         const userId = parseInt(req.body.userId, 10)
         const teamId = parseInt(req.body.teamId, 10)
         const favoriteTeams = await db.FavoriteTeam.findAll({

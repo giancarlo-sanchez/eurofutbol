@@ -60,7 +60,7 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
         <div className="text-box__squad-team-page">
             <img src={teamDetails.logo_path}></img>
             {
-                idChecker(teamId,favoriteTeamsList.favoriteTeams)?<button onClick={removeFavTeam}>Unfollow</button>:<button onClick={addFavTeam}>Follow</button>
+                idChecker(teamId,favoriteTeamsList?favoriteTeamsList.favoriteTeams:[])?<button onClick={removeFavTeam}>Unfollow</button>:<button onClick={addFavTeam}>Follow</button>
             }
 
         </div>
