@@ -1,8 +1,7 @@
 import React from 'react';
 import './index.css';
-import { BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import TeamPage from './components/TeamPage';
-import ListPlayers from './components/ListPlayer';
 import LeaguePage from './components/LeaguePage';
 import LeagueListTeamsPage from './components/LeagueListTeamsPage';
 import PlayerPage from './components/PlayerPage';
