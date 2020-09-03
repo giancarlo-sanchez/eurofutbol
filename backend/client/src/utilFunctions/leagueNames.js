@@ -1,20 +1,20 @@
 export default function setLeagueName(id){
     switch (id) {
-        case '16029':
+        case '17299':
             return {name:'CHAMPIONS LEAGUE',place:'EUROPE'};
-        case '16030':
+        case '17367':
             return {name:'EUROPA LEAGUE',place:'EUROPE'};
-        case '16036':
+        case '17420':
             return {name:'PREMIER LEAGUE',place:'ENGLAND'};
-        case '16211':
+        case '17428':
             return {name:'CHAMPIONSHIP',place:'ENGLAND'};
-        case '16210':
+        case '17426':
             return {name:'LEAGUE ONE',place:'ENGLAND'};
-        case '16386':
+        case '17411':
             return {name:'FA CUP',place:'ENGLAND'};
-        case '16046':
+        case '17228':
             return {name:'EREDIVISIE',place:'NETHERLANDS'};
-        case '16264':
+        case '17361':
             return {name:'BUNDESLIGA',place:'GERMANY'};
         case '17075':
             return {name:'BUNDESLIGA PLAY-OFFS',place:'GERMANY'};
@@ -32,7 +32,7 @@ export default function setLeagueName(id){
             return {name:'NORDIC BETLIGA',place:'DENMARK'};
         case '17160':
             return {name:'LIGUE 1',place:'FRANCE'};
-        case '16415':
+        case '17488':
             return {name:'SERIE A',place:'ITALY'};
         case '16427':
             return {name:'COPPA ITALIA',place:'ITALY'};
@@ -44,7 +44,7 @@ export default function setLeagueName(id){
             return {name:'RUSSIAN PREMIER LEAGUE',place:'RUSSIA'};
         case '17141':
             return {name:'PREMIERSHIP',place:'SCOTLAND'};
-        case '16326':
+        case '17480':
             return {name:'LA LIGA',place:'SPAIN'};
         case '16643':
             return {name:'COPA DEL REY',place:'SPAIN'};

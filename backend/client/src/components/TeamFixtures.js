@@ -1,17 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {fixtureDetailAction}  from '../actions/fixturesActions'
 import dateFormater  from '../utilFunctions/dateFormater'
-import {listDetailsTeamAction}  from '../actions/teamActions'
+
 
 
 function TeamFixtures (props){
-    // let index =  props.match.params.id
+
     console.log("this is TeamFixtures props",props)
-    // if(!props.fixtureId){
-    //     return <div>No data found</div>
-    // }
     let index = props.fixtureId[0]?props.fixtureId[0].id:11867594;
     console.log("this is the fixture Id",index)
     const dispatch = useDispatch();
@@ -29,14 +26,6 @@ function TeamFixtures (props){
         dateTimeZone = dateFormater(fixtureDetails.time.starting_at.date, fixtureDetails.time.starting_at.time, fixtureDetails.time.starting_at.timezone)
     }
 
-    // let handleClick=(index)=>{
-    //     useEffect(() => {
-    //         dispatch(listDetailsTeamAction(index))
-    // }, [index])
-    // }
-
-    // const {coach,squad} = teamDetails
-    // console.log("this is coach and squad",coach, squad)
 return loading? <div>Loading...</div>:error? <div>{error}</div>:
 <div className="team-next-fixture">
     <div className="team-next-fixture__title">
