@@ -1,20 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
-
 import {listDetailsTeamAction}  from '../actions/teamActions'
 import ListPlayers from '../components/ListPlayer'
 import TeamStats from '../components/TeamStats'
 import TeamFixtures from '../components/TeamFixtures'
 import {listFavoriteTeamAction,addFavoriteTeam, removeFavoriteTeam} from '../actions/favoriteTeamActions'
-import PlayerPage from './PlayerPage';
 import idChecker from '../utilFunctions/idChecker'
 
 function TeamPage (props){
     let index =  props.match.params.id
     const dispatch = useDispatch();
+
     useEffect(() => {
             dispatch(listDetailsTeamAction(index))
-
     }, [index])
 
     const listDetailsTeam = useSelector(state => state.listDetailsTeam);
@@ -33,12 +31,6 @@ function TeamPage (props){
     let teamId = teamDetails ? teamDetails.id : null
     let teamImageUrl = teamDetails ? teamDetails.logo_path : null
     let teamName = teamDetails ? teamDetails.name : null
-    console.log("This is favoriteTeamsList",favoriteTeamsList)
-    console.log("This is the data on the variables",userId,teamId, teamImageUrl, teamName,"And thats it")
-
-    console.log("This is teamDetails",teamDetails,"This is userInfo:",userInfo)
-
-    // idChecker(teamId,favoriteTeamsList)
 
     const addFavTeam=(e)=>{
         e.preventDefault();
@@ -76,10 +68,6 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
             <text>Founded:</text>
             <div>{teamDetails.founded}</div>
         </div>
-        {/* <div>Team Id: {teamDetails.id}</div> */}
-        {/* <div>Founded: {teamDetails.founded}</div> */}
-
-
     </div>
     <div className="fixtures-n-stats-grid-container">
         <div className="fixtures-grid-container">
@@ -89,13 +77,11 @@ return loading? <div>Loading...</div>:error? <div>{error}</div>:
         <div className="stats-grid-container">
             <TeamStats stats={teamDetails.stats} loading={loading}/>
         </div>
-        {/* <div>TEAM STATS</div> */}
     </div>
 </div>
 <div className="players-section">
     <div className="players-section__title">PLAYERS</div>
     <div className="container-carousel">
-    {/* <div>Players</div> */}
         <ListPlayers teamId={teamDetails.id} seasonId={teamDetails.current_season_id} team={teamDetails.name} />
     </div>
 </div>

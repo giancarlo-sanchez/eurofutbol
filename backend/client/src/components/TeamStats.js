@@ -1,13 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import statsTotal from '../utilFunctions/statUtil'
 import Carousel from 'react-material-ui-carousel'
 
 
 function TeamStats (stats){
-    console.log("This are the stats:",stats)
     let filteredStats = statsTotal(stats.stats?stats.stats.data:[])
-    console.log("this is filtered stats",filteredStats)
-
 
 return stats.loading? <div>Loading...</div>:
 <div className="list-stats">
@@ -81,14 +78,6 @@ return stats.loading? <div>Loading...</div>:
                 <text>TOTAL:   </text>
                 <div>{filteredStats.lostTotal}</div>
             </div>
-            {/* <div className="text-box">
-                AT HOME:
-            </div>
-            <div className="text-box">
-                AS VISITOR:
-            </div><div className="text-box">
-                TOTAL:
-            </div> */}
         </Carousel>
     </div>
 
