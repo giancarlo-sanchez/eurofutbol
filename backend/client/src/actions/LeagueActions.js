@@ -11,8 +11,6 @@ const listLeagueAction = () => async(dispatch) =>{
         dispatch({type: LEAGUE_LIST_REQUEST });
         const {data} = await axios.get(`https://soccer.sportmonks.com/api/v2.0/leagues?api_token=${api_key}`);
         let listOfAttributes = data.data
-        // let coachInfo = listOfAttributes.coach;
-
         dispatch({type: LEAGUE_LIST_SUCCESS, payload: listOfAttributes})
         }catch(error){
             dispatch({type: LEAGUE_LIST_FAIL, payload:error.message})

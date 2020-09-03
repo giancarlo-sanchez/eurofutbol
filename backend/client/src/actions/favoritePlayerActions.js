@@ -17,8 +17,6 @@ const listFavoritePlayerAction = (token,userId) => async(dispatch) =>{
             headers: { Authorization: `Bearer ${token}` },
           });
         let listOfAttributes = data
-        // let coachInfo = listOfAttributes.coach;
-
         dispatch({type: FAVORITE_PLAYERS_SUCCESS, payload: listOfAttributes})
         }catch(error){
             dispatch({type: FAVORITE_PLAYERS_LIST_FAIL, payload:error.message})

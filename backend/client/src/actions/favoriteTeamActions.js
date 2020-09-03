@@ -34,8 +34,6 @@ const listFavoriteTeamAction = (token,userId) => async(dispatch) =>{
 const addFavoriteTeam = (userId,teamId, teamImageUrl, teamName)=> async(dispatch,getState) =>{
     try{
         dispatch({type: FAVORITE_TEAMS_CREATE_REQUEST });
-        // const { userSignin: { userInfo:{token} } } = getState();
-        // console.log("This is the token on endpoint:",token)
         const {data} = await axios.post(`${baseUrl}/favorite-teams/`,userId,teamId, teamImageUrl, teamName)
         let newTeam = data
 
@@ -50,7 +48,6 @@ const removeFavoriteTeam = (teamId,userId)=> async(dispatch,getState) =>{
     try{
         dispatch({type: FAVORITE_TEAMS_DELETE_REQUEST });
         const { userSignin: { userInfo:{token} } } = getState();
-        // console.log("This is the token on endpoint:",token)
         const {data} = await axios.delete(`${baseUrl}/unfollow-favorite-team/`,{
             headers: { Authorization: `Bearer ${token}` },teamId,userId})
         let deleteTeam = data
