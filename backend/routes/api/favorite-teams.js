@@ -39,10 +39,10 @@ router.post("/", asyncHandler(async (req, res)=>{
 
 router.delete("/unfollow/:teamId/:userId",
     asyncHandler(async function(req, res){
-        console.log("this is req.body",req)
+
         const userId = parseInt(req.params.userId, 10)
         const teamId = parseInt(req.params.teamId, 10)
-        console.log("this is the team Id and userId comming from req",teamId, userId)
+        // console.log("this is the team Id and userId comming from req",teamId, userId)
         const favoriteTeams = await db.FavoriteTeam.findAll({
             where: {
                 userId: userId,
