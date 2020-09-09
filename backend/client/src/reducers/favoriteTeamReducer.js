@@ -5,6 +5,8 @@ const FAVORITE_TEAMS_LIST_FAIL = 'FAVORITE_TEAMS_LIST_FAIL';
 const FAVORITE_TEAMS_CREATE_REQUEST = 'FAVORITE_TEAMS_CREATE_REQUEST';
 const FAVORITE_TEAMS_CREATE_SUCCESS = 'FAVORITE_TEAMS_CREATE_SUCCESS';
 const FAVORITE_TEAMS_CREATE_FAIL = 'FAVORITE_TEAMS_CREATE_FAIL';
+const FAVORITE_TEAMS_DELETE_REQUEST = 'FAVORITE_TEAMS_DELETE_REQUEST';
+const FAVORITE_TEAMS_DELETE_SUCCESS = 'FAVORITE_TEAMS_DELETE_SUCCESS';
 
 function listFavoriteTeamReducer(state = { loading: true }, action){
     switch (action.type){
@@ -24,7 +26,9 @@ function favoriteTeamCreateReducer(state = {}, action) {
       case FAVORITE_TEAMS_CREATE_REQUEST:
         return { loading: true };
       case FAVORITE_TEAMS_CREATE_SUCCESS:
-        return { loading: false, order: action.payload, success: true };
+        return { loading: false, favoriteTeamsList: action.payload, success: true };
+      case FAVORITE_TEAMS_DELETE_SUCCESS:
+        return { loading: false, favoriteTeamsList: action.payload, success: true };
       case FAVORITE_TEAMS_CREATE_FAIL:
         return { loading: false, error: action.payload };
       default: return state;

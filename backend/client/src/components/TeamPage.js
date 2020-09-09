@@ -35,13 +35,13 @@ function TeamPage (props){
     const addFavTeam=(e)=>{
         e.preventDefault();
         dispatch(addFavoriteTeam({userId,teamId, teamImageUrl, teamName}))
-        dispatch(listDetailsTeamAction(index))
+        dispatch(listFavoriteTeamAction(userInfo.token,userInfo.user.id))
     }
 
     const removeFavTeam=(e)=>{
         e.preventDefault();
         dispatch(removeFavoriteTeam({teamId,userId}))
-        dispatch(listDetailsTeamAction(index))
+        dispatch(listFavoriteTeamAction(userInfo.token,userInfo.user.id))
     }
 
 return loading? <div>Loading...</div>:error? <div>{error}</div>:

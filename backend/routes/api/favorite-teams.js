@@ -37,11 +37,12 @@ router.post("/", asyncHandler(async (req, res)=>{
     res.status(201).end();
 }));
 
-router.delete("/unfollow-favorite-team/",
+router.delete("/unfollow/:teamId/:userId",
     asyncHandler(async function(req, res){
-        console.log("this is req.body",req.body)
-        const userId = parseInt(req.body.userId, 10)
-        const teamId = parseInt(req.body.teamId, 10)
+        console.log("this is req.body",req)
+        const userId = parseInt(req.params.userId, 10)
+        const teamId = parseInt(req.params.teamId, 10)
+        console.log("this is the team Id and userId comming from req",teamId, userId)
         const favoriteTeams = await db.FavoriteTeam.findAll({
             where: {
                 userId: userId,
@@ -49,7 +50,11 @@ router.delete("/unfollow-favorite-team/",
             },
         })
 
-        const deletedFavoritePlayer = await favoriteTeams.destroy();
+        console.log("Este es el equipo que sale",favoriteTeams);
+        let favTeamId = favoriteTeams[0].dataValues;
+        console.log('Este es el equipo que sale despues',favTeamId)
+        const element = await db.FavoriteTeam.findByPk(favTeamId.id);
+        const deletedFavoritePlayer = await element.destroy();
 
         res.json({msg: "You don't follow the player anymore 😞!",deletedFavoritePlayer});
 }));
